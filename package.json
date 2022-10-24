@@ -15,6 +15,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "framer-motion": "^6.2.9",
+    "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
@@ -27,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,5 +46,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://yoshiki-m.github.io/mana-landingPage"
 }
