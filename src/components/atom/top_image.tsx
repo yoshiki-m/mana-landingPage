@@ -36,12 +36,12 @@ export default function CallToTopImage(props: Props) {
             width={'full'}
             overflow={'hidden'}>
             <Image
-                alt={'Hero Image'}
+                alt={'Top Image'}
                 fit={'cover'}
                 align={'center'}
                 w={'100%'}
                 h={'100%'}
-                src={props.src}
+                src={`${process.env.PUBLIC_URL}/${props.src}`}
             />
             </Box>
         </Flex>

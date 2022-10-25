@@ -17,12 +17,12 @@ import {
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Center>
           <Image
-            alt={'Hero Image'}
+            alt={'Logo Image'}
             fit={'cover'}
             align={'center'}
             w={'80px'}
             h={'80px'}
-            src='/img/logo.png'
+            src={`${process.env.PUBLIC_URL}/img/logo.png`}
           />
           <Text
             as={'span'}
