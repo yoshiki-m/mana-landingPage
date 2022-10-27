@@ -47,7 +47,7 @@ export default function CallToActionWithVideo() {
           </Heading>
           <Text color={'gray.500'}
             align={'left'}>
-            株式会社manaは、建築・IT業界経験を有するメンバーによる、IT活用を特徴としています。
+            株式会社manaは、建築・IT業界の経験を有するメンバーが所属する、日本の建築業界への貢献を目指す会社です。
             建築業界の3Dパース作成・システム開発について、お気軽にお問合せください。
           </Text>
           <HStack
