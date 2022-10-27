@@ -107,9 +107,7 @@ export default function CallToActionWithVideo() {
             </Link>
           </HStack>
         </VStack>
-        <CallToTopImage
-          src = '/img/top.jpg'
-        />
+        <CallToTopImage />
       </Stack>
     </Container>
   );

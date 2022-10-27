@@ -72,7 +72,7 @@ export default function CEOIntroduction() {
                 </GridItem>
                 <GridItem colSpan={5}>
                   <Text as={'span'}>
-                    ITストラテジスト、システムアーキテクト、応用情報技術者日商簿記2級、2級FP技能士、宅建、マーケティングビジネス実務検定B級、Associate Cloud Engineer(GCP)<br></br><br></br>
+                    ITストラテジスト、システムアーキテクト、応用情報技術者、日商簿記2級、2級FP技能士、宅建、マーケティングビジネス実務検定B級、Associate Cloud Engineer(GCP)<br></br><br></br>
                   </Text>
                 </GridItem>
               </Grid>
