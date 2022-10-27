@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.js": "/mana-landingPage/static/js/main.5ed89bff.js",
+    "main.css": "/mana-landingPage/static/css/main.8eb20739.css",
+    "main.js": "/mana-landingPage/static/js/main.65c97c3b.js",
     "static/js/787.28cb0dcd.chunk.js": "/mana-landingPage/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/mana-landingPage/index.html",
-    "main.5ed89bff.js.map": "/mana-landingPage/static/js/main.5ed89bff.js.map",
+    "main.8eb20739.css.map": "/mana-landingPage/static/css/main.8eb20739.css.map",
+    "main.65c97c3b.js.map": "/mana-landingPage/static/js/main.65c97c3b.js.map",
     "787.28cb0dcd.chunk.js.map": "/mana-landingPage/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5ed89bff.js"
+    "static/css/main.8eb20739.css",
+    "static/js/main.65c97c3b.js"
   ]
 }
