@@ -12,8 +12,6 @@ import {
   import { ReactElement } from 'react';
 
   import CallToVideoBox from '../atom/video_box'
-  
-  
 
   interface FeatureProps {
     text: string;

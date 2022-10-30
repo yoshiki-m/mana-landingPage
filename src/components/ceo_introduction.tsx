@@ -42,17 +42,17 @@ export default function CEOIntroduction() {
                 経歴
               </Text>
               <Text>
-              　2010年　京都大学　工学部建築学科卒<br></br>
-              　2012年　京都大学　工学部研究科建築学専攻修了<br></br>
-              　大学院では、鉄骨構造に関する研究を行う。<br></br><br></br>
-              　2012年〜2015年　ゼネコンで、施工管理を行う。既存建物の解体から、オフィスビルの竣工までを経験する。<br></br><br></br>
-              　2015年　現在の株式会社mana設立。<br></br><br></br>
-              　2018年〜2022年<br></br>
-              　設計事務所と協力し、建築設計業務、確認申請業務、BIMソフトウェアを使ったモデル作成業務などを行う。<br></br>
-              　また、建築と不動産の知見を生かしたシステム開発を行う。<br></br><br></br>
-              　2021年〜
-              　東証プライムの企業にシステム開発エンジニアとして参画。GCPを用いたデータ活用基盤を構築している。<br></br>
-              　IT業界にも通用するシステム開発を習得している。
+              2010年　京都大学　工学部建築学科卒<br></br>
+              2012年　京都大学　工学部研究科建築学専攻修了<br></br>
+              大学院では、鉄骨構造に関する研究を行う。<br></br><br></br>
+              2012年〜2015年　ゼネコンで、施工管理を行う。既存建物の解体から、オフィスビルの竣工までを経験する。<br></br><br></br>
+              2015年　現在の株式会社mana設立。<br></br><br></br>
+              2018年〜2022年<br></br>
+              設計事務所と協力し、建築設計業務、確認申請業務、BIMソフトウェアを使ったモデル作成業務などを行う。<br></br>
+              また、建築と不動産の知見を生かしたシステム開発を行う。<br></br><br></br>
+              2021年〜
+              東証プライムの企業にシステム開発エンジニアとして参画。GCPを用いたデータ活用基盤を構築している。<br></br>
+              IT業界にも通用するシステム開発を習得している。
               </Text>
             </Box>
             <Box>
@@ -65,36 +65,32 @@ export default function CEOIntroduction() {
                 保有資格等
               </Text>
               <Grid templateColumns='repeat(6, 1fr)' gap={4}>
-                <GridItem colSpan={1}>
+                <GridItem colSpan={{ base: 6, md: 1 }}>
                   <Text as={'span'} fontWeight={'bold'}>
-                    　保有資格：
+                  保有資格：
                   </Text>
                 </GridItem>
-                <GridItem colSpan={5}>
+                <GridItem colSpan={{ base: 6, md: 5 }}>
                   <Text as={'span'}>
-                    ITストラテジスト、システムアーキテクト、応用情報技術者、日商簿記2級、2級FP技能士、宅建、マーケティングビジネス実務検定B級、Associate Cloud Engineer(GCP)<br></br><br></br>
+                    ITストラテジスト、システムアーキテクト、応用情報技術者、日商簿記2級、2級FP技能士、宅建、マーケティングビジネス実務検定B級、Associate Cloud Engineer(GCP)
                   </Text>
                 </GridItem>
-              </Grid>
-              <Grid templateColumns='repeat(6, 1fr)' gap={4}>
-                <GridItem colSpan={1}>
+                <GridItem colSpan={{ base: 6, md: 1 }}>
                   <Text as={'span'} fontWeight={'bold'}>
-                    　得意分野：
+                  得意分野：
                   </Text>
                 </GridItem>
-                <GridItem colSpan={5}>
+                <GridItem colSpan={{ base: 6, md: 5 }}>
                   <Text as={'span'}>
-                    建築全般、不動産、マーケティング、Webシステム開発、データサイエンス<br></br><br></br>
+                    建築全般、不動産、マーケティング、Webシステム開発、データサイエンス
                   </Text>
                 </GridItem>
-              </Grid>
-              <Grid templateColumns='repeat(6, 1fr)' gap={4}>
-                <GridItem colSpan={1}>
+                <GridItem colSpan={{ base: 6, md: 1 }}>
                   <Text as={'span'} fontWeight={'bold'}>
-                    　得意言語・技術：
+                  得意言語・技術：
                   </Text>
                 </GridItem>
-                <GridItem colSpan={5}>
+                <GridItem colSpan={{ base: 6, md: 5 }}>
                   <Text as={'span'}>
                     Python,JavaScript,React,HTML,CSS,GCP
                   </Text>

@@ -1,13 +1,12 @@
 import {
   Container,
-  Flex,
-  Box,
   Heading,
   Text,
   Button,
-  VStack,
-  Wrap,
-  WrapItem,
+  SimpleGrid,
+  Grid,
+  GridItem,
+  Stack,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -25,10 +24,12 @@ import {
   MdOutlineEmail,
 } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
-import React, { useState } from 'react';
-
+import { useState } from 'react';
+import {useEventTracking} from "./atom/useTracking"
 
 export default function Contact() {
+  //Google Analytics
+  useEventTracking('send_email')
   // 名前
   const [name, setName] = useState('')
   const handleNameChange = (e: any) => setName(e.target.value)
@@ -113,126 +114,120 @@ export default function Contact() {
   }
 
   return (
-    <Container maxW="full" mt={0} centerContent overflow="hidden" id='contact'>
-      <Flex>
-        <Box
-          borderRadius="lg"
-          m={{ sm: 4, md: 4, lg: 8 }}
-          p={{ sm: 5, md: 5, lg: 8 }}>
-          <Box p={4}>
-            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-              <WrapItem>
-                <Box>
-                  <Heading>お問い合せ</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }}>
-                    右の内容を入力し送信を押下してください。
-                  </Text>
-                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                    <VStack pl={0} spacing={3} alignItems="flex-start">
-                      <Button
-                        size="md"
-                        height="48px"
-                        width="250px"
-                        variant="ghost"
-                        fontWeight="normal"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdEmail color="#1970F1" size="20px" />}>
-                        manacorp2015@gmail.com
-                      </Button>
-                      <Button
-                        size="md"
-                        height="48px"
-                        width="250px"
-                        variant="ghost"
-                        fontWeight="normal"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
-                        東京都江東区東陽5-31-21　
-                      </Button>
-                    </VStack>
-                  </Box>
-                </Box>
-              </WrapItem>
-              <WrapItem>
-                <Box bg="white" borderRadius="lg">
-                  <Box m={8} color="#0B0E3F" width="500px">
-                    <VStack spacing={5}>
+    <Container maxW="6xl" mt={0} overflow="hidden" id='contact'>
+      <SimpleGrid
+        columns={{ base: 1, lg: 1 }}
+        spacing={{ base: 8, md: 10 }}
+        py={{ base: 14, md: 18 }}>
+          <Container maxW={'6xl'} py={5}>
+            <SimpleGrid columns={1} spacing={10}>
+              <Stack spacing={4}>
+                <Heading>お問い合せ</Heading>
+              </Stack>
+              <Stack>
+                <Text>
+                  右の内容を入力し送信を押下してください。
+                </Text>
+              </Stack>
+            </SimpleGrid>
+          </Container>
+        <Grid templateColumns='repeat(2, 1fr)' gap={4}>
+          <GridItem colSpan={{ base: 2, md: 1 }}>
+            <SimpleGrid columns={1}>
+              <Button
+                size="md"
+                height="48px"
+                width="250px"
+                variant="ghost"
+                fontWeight="normal"
+                _hover={{ border: '2px solid #1C6FEB' }}
+                leftIcon={<MdEmail color="#1970F1" size="20px" />}>
+                manacorp2015@gmail.com
+              </Button>
+              <Button
+                size="md"
+                height="48px"
+                width="250px"
+                variant="ghost"
+                fontWeight="normal"
+                _hover={{ border: '2px solid #1C6FEB' }}
+                leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
+                東京都江東区東陽5-31-21　
+              </Button>
+            </SimpleGrid>
+          </GridItem>
+          <GridItem colSpan={{ base: 2, md: 1 }}>
+            <FormControl id="name" isInvalid={isErrorName}>
+              <FormLabel>会社名+お名前</FormLabel>
+              <InputGroup borderColor="#E0E1E7">
+                <InputLeftElement
+                  pointerEvents="none"
+                  children={<BsPerson color="gray.800" />}
+                />
+                <Input type="text" size="md" value={name} onChange={handleNameChange} />
+                <br></br>
+                {!isErrorName ? (
+                  <FormHelperText></FormHelperText>
+                ) : (
+                  <FormErrorMessage>100字以内で会社名+お名前を入力してください。</FormErrorMessage>
+                )}
+              </InputGroup>
+            </FormControl>
 
-                      <FormControl id="name" isInvalid={isErrorName}>
-                        <FormLabel>会社名+お名前</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<BsPerson color="gray.800" />}
-                          />
-                          <Input type="text" size="md" value={name} onChange={handleNameChange} />
-                          <br></br>
-                          {!isErrorName ? (
-                            <FormHelperText></FormHelperText>
-                          ) : (
-                            <FormErrorMessage>100字以内で会社名+お名前を入力してください。</FormErrorMessage>
-                          )}
-                        </InputGroup>
-                      </FormControl>
+            <FormControl id="email" isInvalid={isErrorEmail} mt={3}>
+              <FormLabel>メールアドレス</FormLabel>
+              <InputGroup borderColor="#E0E1E7">
+                <InputLeftElement
+                  pointerEvents="none"
+                  children={<MdOutlineEmail color="gray.800" />}
+                />
+                <Input type="email" size="md"  value={email} onChange={handleEmailChange} />
+                <br></br>
+                {!isErrorEmail ? (
+                  <FormHelperText></FormHelperText>
+                ) : (
+                  <FormErrorMessage>メールアドレスを正しく入力してください。</FormErrorMessage>
+                )}
+              </InputGroup>
+            </FormControl>
 
-                      <FormControl id="email" isInvalid={isErrorEmail}>
-                        <FormLabel>メールアドレス</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<MdOutlineEmail color="gray.800" />}
-                          />
-                          <Input type="email" size="md"  value={email} onChange={handleEmailChange} />
-                          <br></br>
-                          {!isErrorEmail ? (
-                            <FormHelperText></FormHelperText>
-                          ) : (
-                            <FormErrorMessage>メールアドレスを正しく入力してください。</FormErrorMessage>
-                          )}
-                        </InputGroup>
-                      </FormControl>
+            <FormControl id="message" isInvalid={isErrorMessage} mt={3}>
+              <FormLabel>お問合せ内容</FormLabel>
+              <InputGroup borderColor="#E0E1E7">
+              <Textarea
+                borderColor="gray.300"
+                value={message}
+                onChange={handleMessageChange}
+                _hover={{
+                  borderRadius: 'gray.300',
+                }}
+                placeholder="message"
+              />
+              <br></br><br></br><br></br>
+              {!isErrorMessage ? (
+                <FormHelperText></FormHelperText>
+              ) : (
+                <FormErrorMessage>500字以内でお問合せ内容を入力してください。</FormErrorMessage>
+              )}
+              </InputGroup>
+            </FormControl>
 
-                      <FormControl id="message" isInvalid={isErrorMessage}>
-                        <FormLabel>お問合せ内容</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                        <Textarea
-                          borderColor="gray.300"
-                          value={message}
-                          onChange={handleMessageChange}
-                          _hover={{
-                            borderRadius: 'gray.300',
-                          }}
-                          placeholder="message"
-                        />
-                        <br></br><br></br><br></br>
-                        {!isErrorMessage ? (
-                          <FormHelperText></FormHelperText>
-                        ) : (
-                          <FormErrorMessage>500字以内でお問合せ内容を入力してください。</FormErrorMessage>
-                        )}
-                        </InputGroup>
-                      </FormControl>
-
-                      <FormControl id="name" float="right">
-                        <Button
-                          variant="solid"
-                          bg="#0D74FF"
-                          color="white"
-                          isLoading={loading}
-                          disabled={!canSubmit()}
-                          onClick={onclickSendMail}
-                          _hover={{bg:"#0d9eff"}}>
-                          　　　送信　　　
-                        </Button>
-                      </FormControl>
-                    </VStack>
-                  </Box>
-                </Box>
-              </WrapItem>
-            </Wrap>
-          </Box>
-        </Box>
-      </Flex>
+            <FormControl id="name" float="right">
+              <Button
+                variant="solid"
+                bg="#0D74FF"
+                color="white"
+                isLoading={loading}
+                disabled={!canSubmit()}
+                onClick={onclickSendMail}
+                mt={6}
+                _hover={{bg:"#0d9eff"}}>
+                　　　送信　　　
+              </Button>
+            </FormControl>
+          </GridItem>
+        </Grid>
+      </SimpleGrid>
     </Container>
   );
 }
