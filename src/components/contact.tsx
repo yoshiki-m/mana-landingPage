@@ -15,21 +15,26 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
-  useToast
+  useToast,
+  HStack,
+  IconButton
 } from '@chakra-ui/react';
 import emailjs from '@emailjs/browser';
 import {
   MdEmail,
   MdLocationOn,
-  MdOutlineEmail,
+  MdOutlineEmail
 } from 'react-icons/md';
-import { BsPerson } from 'react-icons/bs';
+
+import {
+  BsPerson,
+  BsFacebook,
+  BsTwitter
+ } from 'react-icons/bs';
 import { useState } from 'react';
-import {useEventTracking} from "./atom/useTracking"
+import { trackingEvent } from './atom/gaTracking'
 
 export default function Contact() {
-  //Google Analytics
-  useEventTracking('send_email')
   // 名前
   const [name, setName] = useState('')
   const handleNameChange = (e: any) => setName(e.target.value)
@@ -54,6 +59,8 @@ export default function Contact() {
   // 送信
   const [loading, setLoading] = useState(false)
   const onclickSendMail = () => {
+    // Google Analytics
+    trackingEvent('send_email', 'send_email')
     // ボタンをloading状態にする
     setLoading(true)
 
@@ -155,6 +162,36 @@ export default function Contact() {
                 東京都江東区東陽5-31-21　
               </Button>
             </SimpleGrid>
+            <HStack
+              mt={{ lg: 10, md: 10 }}
+              spacing={5}
+              px={5}
+              alignItems="flex-start">
+              <IconButton
+                aria-label="twitter"
+                variant="ghost"
+                size="lg"
+                isRound={true}
+                _hover={{ border: '2px solid #1C6FEB' }}
+                icon={<BsTwitter size="28px" color="#00acee"/>}
+                onClick={() =>{
+                  window.open("https://twitter.com/mana_best_arch", '_blank');
+                  trackingEvent('go_to_SMS', 'twitter')
+                }}
+              />
+              <IconButton
+                aria-label="facebook"
+                variant="ghost"
+                size="lg"
+                isRound={true}
+                _hover={{ border: '2px solid #1C6FEB' }}
+                icon={<BsFacebook size="28px"  color="#3b5998"/>}
+                onClick={() =>{
+                  window.open("https://www.facebook.com/manacorp1201", '_blank');
+                  trackingEvent('go_to_SMS', 'facebook')
+                }}
+              />
+            </HStack>
           </GridItem>
           <GridItem colSpan={{ base: 2, md: 1 }}>
             <FormControl id="name" isInvalid={isErrorName}>

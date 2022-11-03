@@ -11,10 +11,8 @@ import AboutSystemDevelopment from "./components/about_system_development"
 import Contact from "./components/contact"
 import CEOIntroduction from "./components/ceo_introduction"
 import Footer from "./components/footer"
-import {usePageTracking} from "./components/atom/useTracking"
 
 export const App = () => {
-  usePageTracking()
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
