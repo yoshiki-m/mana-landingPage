@@ -31,8 +31,8 @@ export default function AboutBim() {
         <SplitWithImage
           button_text='3Dパース'
           id='perspective'
-          main_text='BIMソフトによる3Dパース作成'
-          explanation='国内外の優秀なメンバーが、Autodesk社のRevitを用いて、3Dパースを作成します。'
+          main_text='建築3Dパース・動画作成'
+          explanation='ベトナムの優秀なメンバーが、Autodesk社のRevitを用いて、3Dパースを作成します。'
           feature_1_icon={IoBulbOutline}
           feature_1_detail={{ text: '高品質', color: 'yellow.500', bg_color1: 'yellow.100', bg_color2: 'yellow.900'}}
           feature_2_icon={IoBasket}
@@ -51,8 +51,10 @@ export default function AboutBim() {
             />
           }>
           <Text fontSize={'lg'}>
-            建築の平面図、4面の立面図をいただくことで、建築の3Dパースを作成します。
+            建築の平面図、4面の立面図をいただくことで、建築の3Dパースや動画を作成します。
             敷地の形状や周辺環境が分かる資料をいただくことで、パースに反映させることができます。
+            3D動画や、日照シミュレーションは顧客へのクロージングに効果的です。<br />
+            ベトナムの優秀な人材が作業することで、低価格・高品質を実現します。
           </Text>
           <Box>
             <Text
@@ -91,17 +93,7 @@ export default function AboutBim() {
               </GridItem>
               <GridItem colSpan={{ base: 6, md: 5 }}>
                 <Text as={'span'}>
-                  2回
-                </Text>
-              </GridItem>
-              <GridItem colSpan={{ base: 6, md: 1 }}>
-                <Text as={'span'} fontWeight={'bold'}>
-                  納品パース数：
-                </Text>
-              </GridItem>
-              <GridItem colSpan={{ base: 6, md: 5 }}>
-                <Text as={'span'}>
-                  10枚程度(調整可能)
+                  3回
                 </Text>
               </GridItem>
             </Grid>
@@ -134,7 +126,7 @@ export default function AboutBim() {
               </GridItem>
               <GridItem colSpan={{ base: 6, md: 5 }}>
                 <Text as={'span'}>
-                  PDF・画像ファイル、追加料金でRevitの元データ
+                  建築内・外装の3Dパース10枚程度, 3D動画(日照シミュレーションも可)
                 </Text>
               </GridItem>
             </Grid>
@@ -149,7 +141,7 @@ export default function AboutBim() {
                   以下の内容は追加料金なし：<br></br>
                 </Text>
                 <Text as={'span'}>
-                  ・修正2回まで<br></br>
+                  ・修正3回まで<br></br>
                   ・3Kレンダリング<br></br>
                   ・モデル内への車・人の配置<br></br>
                   ・データ保管5年間まで<br></br><br></br>
@@ -160,7 +152,7 @@ export default function AboutBim() {
                   追加料金が発生する例：<br></br>
                 </Text>
                 <Text as={'span'}>
-                  ・3回以上修正<br></br>
+                  ・4回以上修正<br></br>
                   ・4Kレンダリング<br></br>
                   ・Revitファイルの納品<br></br>
                   ・夜景パースレンダリング・バードアイビューレンダリング<br></br>
