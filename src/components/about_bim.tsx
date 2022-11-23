@@ -38,7 +38,7 @@ export default function AboutBim() {
           feature_2_icon={IoBasket}
           feature_2_detail={{ text: '15万円〜', color: 'green.500', bg_color1: 'green.100', bg_color2: 'green.900'}}
           feature_3_icon={IoBuild}
-          feature_3_detail={{ text: '2回まで修正可', color: 'purple.500', bg_color1: 'purple.100', bg_color2: 'purple.900'}}
+          feature_3_detail={{ text: '3回まで修正可', color: 'purple.500', bg_color1: 'purple.100', bg_color2: 'purple.900'}}
           src='https://www.youtube.com/embed/clpF3qnw7ug'
           title='about_bim'
         />
