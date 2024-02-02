@@ -81,9 +81,7 @@ export default function CEOIntroduction() {
                 </GridItem>
                 <GridItem colSpan={{ base: 6, md: 5 }}>
                   <Text as={"span"}>
-                    一級建築士、ITストラテジスト、システムアーキテクト、応用情報技術者、日商簿記2級、2級FP技能士、宅地建物取引士、
-                    Associate Cloud
-                    Engineer(GCP)、マーケティングビジネス実務検定B級
+                    一級建築士、1級建築施工管理技士、ITストラテジスト、システムアーキテクト、応用情報技術者、日商簿記2級、2級FP技能士、宅地建物取引士
                   </Text>
                 </GridItem>
                 <GridItem colSpan={{ base: 6, md: 1 }}>
