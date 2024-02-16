@@ -5,8 +5,8 @@ https://zenn.dev/mt5/articles/5d784cf542986f
 npm run build
 確認
 npm run start
-buildをdocsにコピー
-cp -r build docs
+buildの中身をdocsにコピー(うまくいかないなら、Finderでやっても良い)
+cp -r build ./docs
 GitHubにpush
 GitHubPagesの設定により、mainブランチの/docsが表示される。
 
